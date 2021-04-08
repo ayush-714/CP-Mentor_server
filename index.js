@@ -31,9 +31,10 @@ done: Number
 });
 const Info = new mongoose.model("users", userInfo);
 const AllQue = new mongoose.model("questions", Quelist);
+
+
 app.post('/add', function (req,res){
-    
-    const user=req.body.user;
+setTimeout(function(){  const user=req.body.user;
     const cfid=req.body.cfid;
     const pass=req.body.pass;
    
@@ -56,7 +57,8 @@ app.post('/add', function (req,res){
                 docUment.save();
             }
         });
-
+},2000);
+  
 
 });
 
