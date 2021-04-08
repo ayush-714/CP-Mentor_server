@@ -46,7 +46,7 @@ app.post('/add', function (req,res){
     });
     const found = 0;
       
-
+    // console.log()
     Info.countDocuments({ _id: user })
         .then((count) => {
             if (count > 0) {
@@ -107,56 +107,6 @@ app.get('/update', function (req,res){
 });
 
 
-app.post('/userdetailssss', function (req,res){
-      
-    request({
-        url: "https://codeforces.com/api/user.info?handles="+req.body.id,
-        json: true
-    },(err,response,body)=>{
-        // console.log(body.result[0]);
-        var name;
-        if(body.result[0].firstName===" ")
-         name=" ";
-         else{
-             name=body.result[0].firstName;
-         }
-        const output ={
-            Name:name,
-            Imageurl:body.result[0].titlePhoto,
-            Ratting:body.result[0].rating
-        }
-
-        JSON.stringify(output);
-        res.send(output);
-        // allque=body;
-    });
-});
-app.post('/userdetaailssss', function (req,res){
-      
-    request({
-        url: "https://codeforces.com/api/user.info?handles="+req.body.id,
-        json: true
-    },(err,response,body)=>{
-        // console.log(body.result[0]);
-        var name;
-        if(body.result[0].firstName===" ")
-         name=" ";
-         else{
-             name=body.result[0].firstName;
-         }
-        const output ={
-            Name:name,
-            Imageurl:body.result[0].titlePhoto,
-            Ratting:body.result[0].rating
-        }
-
-        JSON.stringify(output);
-        res.send(output);
-        // allque=body;
-    });
-});
-
-
 
 app.post('/userquestions',function (req,res){
 var allque=[];
@@ -204,9 +154,6 @@ app.get('/', function (req,res){
     res.send(Hello);    
 });
 
-app.listen(process.env.PORT || 3002, function () {
-    console.log("Running on port ");
-});
 
 
 app.post('/userdetailssss', function (req,res){
@@ -232,4 +179,8 @@ app.post('/userdetailssss', function (req,res){
         res.send(output);
         // allque=body;
     });
+});
+
+app.listen(process.env.PORT || 3002, function () {
+    console.log("Running on port ");
 });
