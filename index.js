@@ -34,7 +34,9 @@ const AllQue = new mongoose.model("questions", Quelist);
 
 
 app.post('/add', function (req,res){
-setTimeout(function(){  const user=req.body.user;
+    // console.log("Nicee");
+// setTimeout(function(){
+    const user=req.body.user;
     const cfid=req.body.cfid;
     const pass=req.body.pass;
    
@@ -57,7 +59,7 @@ setTimeout(function(){  const user=req.body.user;
                 docUment.save();
             }
         });
-},2000);
+// },2000);
   
 
 });
