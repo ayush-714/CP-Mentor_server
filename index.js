@@ -56,6 +56,7 @@ app.post('/add', function (req,res){
 
                 
             } else {
+                // console.log(docUment);
                 docUment.save();
             }
         });
