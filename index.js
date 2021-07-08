@@ -34,8 +34,8 @@ const AllQue = new mongoose.model("questions", Quelist);
 
 
 app.post('/add', function (req,res){
-    // console.log("Nicee");
-// setTimeout(function(){
+    console.log("Nicee");
+//
     const user=req.body.user;
     const cfid=req.body.cfid;
     const pass=req.body.pass;
@@ -48,7 +48,7 @@ app.post('/add', function (req,res){
     Level: 1
     });
     const found = 0;
-      
+    // setTimeout(function(){
     // console.log()
     Info.countDocuments({ _id: user })
         .then((count) => {
@@ -56,7 +56,7 @@ app.post('/add', function (req,res){
 
                 
             } else {
-                // console.log(docUment);
+                console.log(docUment);
                 docUment.save();
             }
         });
